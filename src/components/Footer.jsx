@@ -1,13 +1,12 @@
 import { navigation, siteConfig } from '../config/siteConfig'
+import BrandLogo from './BrandLogo'
 export default function Footer() {
   return (
     <footer className="site-footer">
       <div className="container">
         <div className="footer-top">
           <div>
-            <a href="#home" className="wordmark footer-logo">
-              LKS<span>STUDIO</span>
-            </a>
+            <BrandLogo className="footer-logo" />
             <p>
               Your Trusted Partner in Apparel
               <br />

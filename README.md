@@ -65,6 +65,15 @@ about 1200 px wide for hero/about and 700 px wide for category images. Image reg
 retain their aspect ratios; below-the-fold images load lazily. Adjust image-specific
 cropping in `src/index.css` if necessary.
 
+## Brand logo
+
+The supplied logo appears in the header and footer using the shared `BrandLogo`
+component. `public/images/lks-studio-logo-source.png` retains the original screenshot;
+CSS frames only the emblem and brand name, excluding the surrounding interface.
+When a clean standalone logo is available, update `siteConfig.logo` in
+`src/config/siteConfig.js` and replace the screenshot framing in `.brand-logo img`
+with `position: static; width: 100%; height: 100%; object-fit: contain`.
+
 ## Brand colors
 
 The interface uses white (`#FFFFFF`), near-black (`#151515`), and vibrant yellow

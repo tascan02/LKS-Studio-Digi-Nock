@@ -1,5 +1,6 @@
 export const siteConfig = {
   name: 'LKS Studio',
+  logo: '/images/lks-studio-logo-source.png',
   phone: '+91 89205 47605',
   phoneInternational: '+918920547605',
   whatsappNumber: '918920547605',

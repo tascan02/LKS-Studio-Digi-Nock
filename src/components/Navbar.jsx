@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react'
 import { navigation } from '../config/siteConfig'
 import { useScrollSpy } from '../hooks/useScrollSpy'
 import { WhatsAppLink } from './UI'
+import BrandLogo from './BrandLogo'
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -71,14 +72,7 @@ export default function Navbar() {
       className={`site-header ${scrolled ? 'is-scrolled' : ''}`}
     >
       <div className="container nav-inner">
-        <a
-          href="#home"
-          className="wordmark"
-          aria-label="LKS Studio home"
-          onClick={() => setOpen(false)}
-        >
-          LKS<span>STUDIO</span>
-        </a>
+        <BrandLogo onClick={() => setOpen(false)} />
         <nav className="desktop-nav" aria-label="Main navigation">
           {links}
         </nav>
