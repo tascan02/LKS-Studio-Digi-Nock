@@ -1260,7 +1260,10 @@ select:focus {
     width: 68px;
   }
   .footer-logo {
-    width: 120px;
+    width: 80px;
+  }
+  .footer-logo + p {
+    margin-top: 18px;
   }
   .nav-cta {
     padding: 10px 12px;
