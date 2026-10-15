@@ -65,6 +65,13 @@ about 1200 px wide for hero/about and 700 px wide for category images. Image reg
 retain their aspect ratios; below-the-fold images load lazily. Adjust image-specific
 cropping in `src/index.css` if necessary.
 
+## Brand colors
+
+The interface uses white (`#FFFFFF`), near-black (`#151515`), and vibrant yellow
+(`#F6CC00`) inspired by the supplied LKS Studio logo. Brand variables and shared
+styles are in `src/index.css`. Yellow controls use dark text for readability;
+local placeholder illustrations and the favicon follow the same palette.
+
 ## Update business content
 
 Edit `src/config/siteConfig.js` to change the company name, displayed phone,
