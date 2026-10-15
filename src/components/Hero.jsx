@@ -43,19 +43,22 @@ export default function Hero() {
           <span>01 — LKS</span>
         </div>
         <StudioImage image={siteImages.hero} priority />
-        <div className="experience-seal">
-          <strong>
-            23<span>+</span>
-          </strong>
-          <span>
-            YEARS OF
-            <br />
-            EXPERIENCE
-          </span>
-        </div>
         <div className="hero-image-footer">
-          <span>Quality in every detail.</span>
-          <span>Made for your business.</span>
+          <div className="hero-experience">
+            <strong>
+              23<span>+</span>
+            </strong>
+            <span>
+              Years of
+              <br />
+              experience
+            </span>
+          </div>
+          <p className="hero-image-note">
+            Quality in every detail.
+            <br />
+            Made for your business.
+          </p>
         </div>
       </Reveal>
     </section>

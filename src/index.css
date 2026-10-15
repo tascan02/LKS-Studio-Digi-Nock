@@ -434,41 +434,44 @@ h1 em {
 .hero-visual .studio-image {
   aspect-ratio: 0.84;
 }
-.experience-seal {
-  position: absolute;
-  left: -36px;
-  bottom: 60px;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: var(--brand-yellow);
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+
+.hero-image-footer {
   align-items: center;
-  box-shadow:
-    0 0 0 1px var(--brand-yellow),
-    inset 0 0 0 6px var(--brand-yellow),
-    inset 0 0 0 7px #151515;
+  gap: 18px;
+  padding-top: 16px;
 }
-.experience-seal strong {
+.hero-experience {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 14px;
+  padding: 14px 18px;
+  border-left: 3px solid var(--brand-yellow);
+  background: #151515;
+  color: #ffffff;
+}
+.hero-experience strong {
+  display: flex;
+  align-items: flex-start;
+  gap: 2px;
   font-family: var(--font-editorial);
-  color: var(--accent);
-  font-size: 43px;
+  font-size: 48px;
   font-weight: 500;
   line-height: 1;
+  color: var(--brand-yellow);
 }
-.experience-seal strong span {
-  font-size: 24px;
-  vertical-align: top;
+.hero-experience strong span {
+  padding-top: 3px;
+  font-size: 26px;
 }
-.experience-seal > span {
-  font-size: 0.6875rem;
-  letter-spacing: 0.16em;
-  line-height: 1.7;
-  text-align: center;
-  margin-top: 6px;
+.hero-experience > span {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+.hero-image-note {
+  text-align: right;
+  line-height: 1.8;
 }
 .trust-strip {
   border-block: 1px solid var(--border);
@@ -1255,17 +1258,7 @@ select:focus {
   .hero-bottom p span {
     margin-inline: 4px;
   }
-  .experience-seal {
-    width: 102px;
-    height: 102px;
-    left: -22px;
-  }
-  .experience-seal strong {
-    font-size: 35px;
-  }
-  .experience-seal > span {
-    font-size: 0.625rem;
-  }
+
   .section {
     padding-block: 85px;
   }
@@ -1446,13 +1439,22 @@ select:focus {
   }
   .hero-image-footer {
     font-size: 0.75rem;
+    gap: 12px;
   }
-  .experience-seal {
-    left: 15px;
-    bottom: 45px;
-    width: 98px;
-    height: 98px;
+  .hero-experience {
+    gap: 10px;
+    padding: 12px 14px;
   }
+  .hero-experience strong {
+    font-size: 40px;
+  }
+  .hero-experience strong span {
+    font-size: 22px;
+  }
+  .hero-experience > span {
+    font-size: 0.8125rem;
+  }
+
   .trust-grid {
     grid-template-columns: 1fr 1fr;
     padding-block: 10px;
