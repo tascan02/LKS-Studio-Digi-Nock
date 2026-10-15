@@ -41,18 +41,32 @@ font fallbacks if the font service is unavailable.
 
 ## Replace photographs
 
-No real or remote product photographs are used. All six illustrations are clearly
-labeled as placeholders and must not be treated as genuine LKS Studio products.
-Place approved photographs in `public/images/` using these exact filenames:
+The supplied business photos are integrated into the hero, About section, and
+Women's Tops / Women's T-Shirts / upcoming Kids Wear collections. Files live in
+`public/images/products/`. The original `lksphotos/` handoff remains untouched locally
+and is ignored by Git to avoid storing duplicate source files. Photos are already
+web-sized JPEGs (roughly 25–270 KB each); no remote photo service is required.
 
-| File                 | Used for                      | Suggested crop                                                     |
-| -------------------- | ----------------------------- | ------------------------------------------------------------------ |
-| `hero.jpg`           | Hero editorial image          | Portrait, about 5:6; keep subject near the center for mobile crops |
-| `about.jpg`          | Business/manufacturing image  | Portrait, about 5:6                                                |
-| `womens-tops.jpg`    | Women's Tops collection       | Portrait, about 3:4                                                |
-| `womens-tshirts.jpg` | Women's T-Shirts collection   | Portrait, about 3:4                                                |
-| `plazo.jpg`          | Plazo Collection              | Portrait, about 3:4                                                |
-| `kids-wear.jpg`      | Upcoming Kids Wear collection | Portrait, about 3:4                                                |
+No Plazo photograph was supplied, so that collection keeps its labeled illustration.
+Kids Wear photography previews the upcoming collection and does not change availability.
+One duplicate lime-camisole sheet was omitted in favor of the complete version.
+
+All cover selections, alt descriptions, focal positions, and gallery ordering are
+centralized in `src/config/siteConfig.js`:
+
+| Image path under `public/images/`    | Placement                         |
+| ------------------------------------ | --------------------------------- |
+| `products/taupe-square-neck-top.jpg` | Hero                              |
+| `products/mauve-zip-top.jpg`         | About                             |
+| `products/pink-bow-top.jpg`          | Women's Tops cover                |
+| `products/black-brooklyn-top.jpg`    | Women's T-Shirts cover            |
+| `products/kids-bear-outfit.jpg`      | Kids Wear Coming Soon cover       |
+| `plazo.jpg` (not yet supplied)       | Future Plazo cover                |
+| `lks-studio-logo.jpg`                | Clean brand logo in header/footer |
+
+To replace an image, overwrite its existing asset or update its `src` in the central
+configuration. Add more collection photos to `collectionGalleries` in the same file.
+The card's photo count, thumbnail rail, and viewer controls adapt automatically.
 
 Then open `src/config/siteConfig.js`, set `isPlaceholder: false` for each replaced
 image, and update its `alt` to describe the actual photograph. Keep `fallback`
@@ -67,12 +81,10 @@ cropping in `src/index.css` if necessary.
 
 ## Brand logo
 
-The supplied logo appears in the header and footer using the shared `BrandLogo`
-component. `public/images/lks-studio-logo-source.png` retains the original screenshot;
-CSS frames only the emblem and brand name, excluding the surrounding interface.
-When a clean standalone logo is available, update `siteConfig.logo` in
-`src/config/siteConfig.js` and replace the screenshot framing in `.brand-logo img`
-with `position: static; width: 100%; height: 100%; object-fit: contain`.
+The clean business-supplied logo is `public/images/lks-studio-logo.jpg` and is
+configured through `siteConfig.logo`. The shared `BrandLogo` component displays it
+in the header and footer; CSS frames only its surrounding white margin. If a future
+logo has different dimensions or padding, adjust `.brand-logo img` in `src/index.css`.
 
 ## Brand colors
 
@@ -87,7 +99,10 @@ Tap or click any collection image (or its magnifying-glass control) to open an
 uncropped, larger preview. The viewer uses the same `collection.image` configuration
 and local fallback as the card. Replacing a photo and setting `isPlaceholder: false`
 as described above automatically updates both places; no viewer changes are needed.
-Use a sufficiently large optimized source photo for a sharp preview.
+Use a sufficiently large optimized source photo for a sharp preview. Multi-photo
+collections provide previous/next controls, thumbnail selection, image counts, and
+Left/Right arrow-key navigation. Model photos and supplied detail sheets are grouped
+by collection. The viewer shows the entire photo without cropping.
 
 The native modal supports keyboard navigation, Escape, a close button, and tapping
 the backdrop. Background scrolling is paused while open, and focus returns to the

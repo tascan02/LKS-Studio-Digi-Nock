@@ -11,8 +11,8 @@ export default function BrandLogo({ className = '', onClick }) {
       <img
         src={siteConfig.logo}
         alt="LKS Studio — yellow three-petal emblem"
-        width="538"
-        height="474"
+        width="1080"
+        height="1034"
         decoding="async"
       />
     </a>

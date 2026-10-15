@@ -231,8 +231,7 @@ em {
   align-items: center;
   gap: 38px;
 }
-/* Frame only the supplied brand mark; keep the screenshot's UI outside the viewport.
-   For a clean logo asset, replace the source in siteConfig and remove this framing. */
+/* Frame the clean logo artwork, trimming only its surrounding white margin. */
 .brand-logo {
   position: relative;
   display: block;
@@ -245,11 +244,11 @@ em {
 }
 .brand-logo img {
   position: absolute;
-  width: 213.4921%;
+  width: 150%;
   max-width: none;
   height: auto;
-  left: -71.4286%;
-  top: -44%;
+  left: -25%;
+  top: -20%;
 }
 .desktop-nav {
   display: flex;
@@ -567,7 +566,7 @@ h1 em {
 .collection-zoom-hint {
   position: absolute;
   right: 12px;
-  bottom: 44px;
+  bottom: 14px;
   display: grid;
   place-items: center;
   width: 44px;
@@ -580,6 +579,19 @@ h1 em {
   transition:
     background-color 0.2s,
     transform 0.2s;
+}
+.collection-image[data-placeholder='true'] .collection-zoom-hint {
+  bottom: 44px;
+}
+.collection-photo-count {
+  position: absolute;
+  left: 12px;
+  bottom: 16px;
+  padding: 6px 10px;
+  background: rgb(21 21 21 / 85%);
+  color: #ffffff;
+  font-size: 0.75rem;
+  line-height: 1.5;
 }
 .collection-image-trigger:hover .collection-zoom-hint,
 .collection-image-trigger:focus-visible .collection-zoom-hint {
@@ -607,6 +619,10 @@ h1 em {
   backdrop-filter: blur(8px);
 }
 .photo-viewer-header {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  border-bottom: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -644,6 +660,70 @@ h1 em {
 .photo-viewer .studio-image img {
   object-fit: contain;
 }
+.photo-viewer-stage {
+  position: relative;
+}
+.photo-viewer.has-gallery .studio-image {
+  height: min(48dvh, 580px);
+}
+.photo-viewer-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgb(255 255 255 / 40%);
+  border-radius: 50%;
+  background: rgb(21 21 21 / 88%);
+  color: #ffffff;
+}
+.photo-viewer-arrow:hover {
+  background: #151515;
+  color: var(--brand-yellow);
+}
+.photo-viewer-arrow.previous {
+  left: 12px;
+}
+.photo-viewer-arrow.next {
+  right: 12px;
+}
+.photo-viewer-arrow:focus-visible {
+  outline-color: var(--brand-yellow);
+}
+.photo-viewer-status {
+  padding: 14px 24px 10px;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.photo-viewer-thumbnails {
+  position: relative;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 24px 12px;
+  scrollbar-width: thin;
+  overscroll-behavior-x: contain;
+}
+.photo-viewer-thumbnails button {
+  flex: 0 0 60px;
+  padding: 2px;
+  border: 2px solid transparent;
+  background: #f4f4f4;
+}
+.photo-viewer-thumbnails button[aria-pressed='true'] {
+  border-color: #151515;
+  background: var(--brand-yellow);
+}
+.photo-viewer-thumbnails img {
+  width: 52px;
+  height: 64px;
+  object-fit: cover;
+  object-position: center top;
+}
 .photo-viewer-footer {
   display: flex;
   flex-wrap: wrap;
@@ -671,7 +751,9 @@ h1 em {
   position: absolute;
   left: 14px;
   top: 15px;
-  color: #3c3c3c;
+  color: #151515;
+  background: rgb(255 255 255 / 90%);
+  padding: 3px 6px;
   font-size: 0.75rem;
   letter-spacing: 0.08em;
 }

@@ -22,6 +22,7 @@ export default function StudioImage({
         loading={priority ? 'eager' : 'lazy'}
         fetchPriority={priority ? 'high' : 'auto'}
         decoding="async"
+        style={image.position ? { objectPosition: image.position } : undefined}
       />
       {placeholder && (
         <figcaption>

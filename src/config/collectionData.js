@@ -1,4 +1,4 @@
-import { siteImages } from './siteConfig'
+import { siteImages, collectionGalleries } from './siteConfig'
 export const collections = [
   {
     id: 'tops',
@@ -6,6 +6,7 @@ export const collections = [
     description:
       'Contemporary and versatile tops designed for modern everyday fashion.',
     image: siteImages.collections.tops,
+    gallery: collectionGalleries.tops,
   },
   {
     id: 'tshirts',
@@ -13,6 +14,7 @@ export const collections = [
     description:
       'Comfortable, stylish T-shirts crafted with attention to quality and fit.',
     image: siteImages.collections.tshirts,
+    gallery: collectionGalleries.tshirts,
   },
   {
     id: 'plazo',
@@ -27,6 +29,7 @@ export const collections = [
     description:
       'An exciting upcoming collection for infants and children up to 15 years of age.',
     image: siteImages.collections.kids,
+    gallery: collectionGalleries.kids,
     comingSoon: true,
   },
 ]

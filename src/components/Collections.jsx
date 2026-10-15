@@ -28,7 +28,10 @@ export default function Collections() {
             delay={index * 0.07}
             className="collection-card"
           >
-            <div className="collection-image">
+            <div
+              className="collection-image"
+              data-placeholder={item.image.isPlaceholder}
+            >
               <StudioImage image={item.image} />
               <button
                 type="button"
@@ -38,6 +41,11 @@ export default function Collections() {
                 aria-haspopup="dialog"
                 title="Enlarge photo"
               >
+                {item.gallery?.length > 1 && (
+                  <span className="collection-photo-count" aria-hidden="true">
+                    {item.gallery.length} photos
+                  </span>
+                )}
                 <span className="collection-zoom-hint">
                   <ZoomIn size={19} aria-hidden="true" />
                 </span>
