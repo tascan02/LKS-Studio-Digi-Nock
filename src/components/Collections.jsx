@@ -30,7 +30,9 @@ export default function Collections() {
           >
             <div
               className="collection-image"
-              data-placeholder={item.image.isPlaceholder}
+              data-caption={
+                item.image.isPlaceholder || Boolean(item.image.caption)
+              }
             >
               <StudioImage image={item.image} />
               <button

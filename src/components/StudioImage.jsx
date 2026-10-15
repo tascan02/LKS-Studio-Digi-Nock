@@ -6,8 +6,13 @@ export default function StudioImage({
 }) {
   const [failed, setFailed] = useState(false)
   const placeholder = image.isPlaceholder || failed
+  const caption = placeholder
+    ? 'Illustrative placeholder · photography coming soon'
+    : image.caption
   return (
-    <figure className={`studio-image ${className}`}>
+    <figure
+      className={`studio-image ${!placeholder && image.caption ? 'has-caption' : ''} ${className}`}
+    >
       <img
         src={placeholder ? image.fallback : image.src}
         alt={
@@ -22,13 +27,9 @@ export default function StudioImage({
         loading={priority ? 'eager' : 'lazy'}
         fetchPriority={priority ? 'high' : 'auto'}
         decoding="async"
-        style={image.position ? { objectPosition: image.position } : undefined}
+        style={{ objectPosition: image.position, objectFit: image.fit }}
       />
-      {placeholder && (
-        <figcaption>
-          Illustrative placeholder · photography coming soon
-        </figcaption>
-      )}
+      {caption && <figcaption>{caption}</figcaption>}
     </figure>
   )
 }

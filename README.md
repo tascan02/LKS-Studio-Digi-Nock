@@ -47,7 +47,9 @@ Women's Tops / Women's T-Shirts / upcoming Kids Wear collections. Files live in
 and is ignored by Git to avoid storing duplicate source files. Photos are already
 web-sized JPEGs (roughly 25–270 KB each); no remote photo service is required.
 
-No Plazo photograph was supplied, so that collection keeps its labeled illustration.
+No Plazo photograph was supplied, so that collection uses a labeled AI-generated
+concept inspired by the existing fashion photography. It is not a photograph of an
+actual LKS Studio product; replace it with an approved product photo when available.
 Kids Wear photography previews the upcoming collection and does not change availability.
 One duplicate lime-camisole sheet was omitted in favor of the complete version.
 
@@ -61,7 +63,7 @@ centralized in `src/config/siteConfig.js`:
 | `products/pink-bow-top.jpg`          | Women's Tops cover                |
 | `products/black-brooklyn-top.jpg`    | Women's T-Shirts cover            |
 | `products/kids-bear-outfit.jpg`      | Kids Wear Coming Soon cover       |
-| `plazo.jpg` (not yet supplied)       | Future Plazo cover                |
+| `products/plazo-ai-concept.jpg`      | AI-generated Plazo illustration   |
 | `lks-studio-logo.jpg`                | Clean brand logo in header/footer |
 
 To replace an image, overwrite its existing asset or update its `src` in the central
@@ -78,6 +80,11 @@ Use optimized images (typically 300–500 KB or less) with sufficient resolution
 about 1200 px wide for hero/about and 700 px wide for category images. Image regions
 retain their aspect ratios; below-the-fold images load lazily. Adjust image-specific
 cropping in `src/index.css` if necessary.
+
+The AI concept generation prompt and reference files are documented in
+`src/assets/images/plazo-generation.md`. The caption is configured in
+`siteImages.collections.plazo.caption`; remove it only when replacing the asset with
+an approved real product photograph. Set `fit` as needed to control image cropping.
 
 ## Brand logo
 

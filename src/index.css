@@ -430,6 +430,18 @@ h1 em {
   text-align: center;
   z-index: 1;
 }
+.studio-image.has-caption {
+  display: flex;
+  flex-direction: column;
+}
+.studio-image.has-caption img {
+  flex: 1;
+  min-height: 0;
+}
+.studio-image.has-caption figcaption {
+  position: static;
+  flex-shrink: 0;
+}
 .hero-visual .studio-image {
   aspect-ratio: 0.84;
 }
@@ -580,7 +592,7 @@ h1 em {
     background-color 0.2s,
     transform 0.2s;
 }
-.collection-image[data-placeholder='true'] .collection-zoom-hint {
+.collection-image[data-caption='true'] .collection-zoom-hint {
   bottom: 44px;
 }
 .collection-photo-count {
