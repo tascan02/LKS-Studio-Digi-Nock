@@ -81,6 +81,18 @@ The interface uses white (`#FFFFFF`), near-black (`#151515`), and vibrant yellow
 styles are in `src/index.css`. Yellow controls use dark text for readability;
 local placeholder illustrations and the favicon follow the same palette.
 
+## Collection photo viewer
+
+Tap or click any collection image (or its magnifying-glass control) to open an
+uncropped, larger preview. The viewer uses the same `collection.image` configuration
+and local fallback as the card. Replacing a photo and setting `isPlaceholder: false`
+as described above automatically updates both places; no viewer changes are needed.
+Use a sufficiently large optimized source photo for a sharp preview.
+
+The native modal supports keyboard navigation, Escape, a close button, and tapping
+the backdrop. Background scrolling is paused while open, and focus returns to the
+image control on close. Kids Wear remains Coming Soon in the preview with no order CTA.
+
 ## Update business content
 
 Edit `src/config/siteConfig.js` to change the company name, displayed phone,

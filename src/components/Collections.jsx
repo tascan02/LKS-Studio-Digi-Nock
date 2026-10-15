@@ -1,9 +1,12 @@
-import { ArrowDownRight } from 'lucide-react'
+import { useState } from 'react'
+import { ArrowDownRight, ZoomIn } from 'lucide-react'
+import PhotoViewer from './PhotoViewer'
 import { collections } from '../config/collectionData'
 import { collectionEnquiry } from '../utils/whatsapp'
 import StudioImage from './StudioImage'
 import { Reveal, SectionHeading, WhatsAppLink } from './UI'
 export default function Collections() {
+  const [selected, setSelected] = useState(null)
   return (
     <section id="collections" className="section container">
       <SectionHeading
@@ -27,6 +30,18 @@ export default function Collections() {
           >
             <div className="collection-image">
               <StudioImage image={item.image} />
+              <button
+                type="button"
+                className="collection-image-trigger"
+                onClick={() => setSelected(item)}
+                aria-label={`Enlarge ${item.name} image${item.comingSoon ? ' (coming soon)' : ''}`}
+                aria-haspopup="dialog"
+                title="Enlarge photo"
+              >
+                <span className="collection-zoom-hint">
+                  <ZoomIn size={19} aria-hidden="true" />
+                </span>
+              </button>
               <span className="collection-number">0{index + 1}</span>
               {item.comingSoon && (
                 <span className="coming-soon">Coming Soon</span>
@@ -51,6 +66,9 @@ export default function Collections() {
           </Reveal>
         ))}
       </div>
+      {selected && (
+        <PhotoViewer collection={selected} onClose={() => setSelected(null)} />
+      )}
     </section>
   )
 }
