@@ -3,7 +3,7 @@
 - Generated using the built-in imagegen tool on 15 October 2026.
 - Website asset: `public/images/products/plazo-ai-concept.jpg`.
 - Style references: `public/images/products/taupe-square-neck-top.jpg` and `public/images/products/mauve-zip-top.jpg`.
-- Intended use: an explicitly labeled AI-generated illustration, not a real product photograph.
+- Intended use: an AI-generated fashion concept, not a real product photograph. The visible caption was removed at the user’s request; provenance is retained in these notes and the image alt text.
 - The original generated PNG remains in the local generated-images directory; the website uses a web-optimized JPEG copy.
 
 ## Final generation prompt

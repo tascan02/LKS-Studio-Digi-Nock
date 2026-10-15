@@ -47,7 +47,7 @@ Women's Tops / Women's T-Shirts / upcoming Kids Wear collections. Files live in
 and is ignored by Git to avoid storing duplicate source files. Photos are already
 web-sized JPEGs (roughly 25–270 KB each); no remote photo service is required.
 
-No Plazo photograph was supplied, so that collection uses a labeled AI-generated
+No Plazo photograph was supplied, so that collection uses an AI-generated
 concept inspired by the existing fashion photography. It is not a photograph of an
 actual LKS Studio product; replace it with an approved product photo when available.
 Kids Wear photography previews the upcoming collection and does not change availability.
@@ -82,9 +82,10 @@ retain their aspect ratios; below-the-fold images load lazily. Adjust image-spec
 cropping in `src/index.css` if necessary.
 
 The AI concept generation prompt and reference files are documented in
-`src/assets/images/plazo-generation.md`. The caption is configured in
-`siteImages.collections.plazo.caption`; remove it only when replacing the asset with
-an approved real product photograph. Set `fit` as needed to control image cropping.
+`src/assets/images/plazo-generation.md`. The Plazo image displays without a visible
+caption, as requested. Its AI origin remains documented here and in its alt text.
+Optional image captions can be configured with `caption`; set `fit` as needed to
+control image cropping.
 
 ## Brand logo
 

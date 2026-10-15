@@ -10,7 +10,7 @@ export const siteConfig = {
     'Hello LKS Studio, I would like to know more about your apparel collections and wholesale manufacturing services.',
 }
 // All supplied photo paths, descriptions, and collection galleries live here.
-// Keep the local illustrations as fallbacks. Plazo uses a labeled AI concept.
+// Keep the local illustrations as fallbacks. Plazo uses an AI concept.
 function productPhoto(filename, alt, category) {
   return {
     src: `/images/products/${filename}.jpg`,
@@ -158,7 +158,6 @@ export const siteImages = {
       fallback: '/images/placeholders/plazo.svg',
       alt: 'AI-generated concept of an adult model wearing cream wide-leg plazo trousers with a taupe top; not an actual LKS Studio product photograph',
       isPlaceholder: false,
-      caption: 'AI-generated illustration',
       fit: 'contain',
     },
     kids: photos.bear,

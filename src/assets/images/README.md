@@ -33,7 +33,7 @@ gallery ordering and alt descriptions are configured in `src/config/siteConfig.j
 
 `1001149490.jpg` is an alternate copy of the lime-camisole sheet; the complete
 `1001149502.jpg` version is used. No Plazo photo was supplied; `public/images/products/plazo-ai-concept.jpg` is an
-AI-generated illustration with a visible caption. See `plazo-generation.md`. Kids Wear remains
+AI-generated concept displayed without a visible caption. See `plazo-generation.md`. Kids Wear remains
 Coming Soon. The About image is a supplied fashion/product photograph, not a factory photo.
 
 Local SVG illustrations in `public/images/placeholders/` remain as graceful fallbacks.
