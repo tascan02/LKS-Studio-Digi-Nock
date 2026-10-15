@@ -52,7 +52,6 @@ export default function Collections() {
                   <ZoomIn size={19} aria-hidden="true" />
                 </span>
               </button>
-              <span className="collection-number">0{index + 1}</span>
               {item.comingSoon && (
                 <span className="coming-soon">Coming Soon</span>
               )}
