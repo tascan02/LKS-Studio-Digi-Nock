@@ -14,7 +14,7 @@ export default function FloatingWhatsApp() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.6 }}
     >
-      <WhatsAppIcon width={29} height={29} />
+      <WhatsAppIcon width={26} height={26} />
       <span>Let’s talk</span>
     </motion.a>
   )
