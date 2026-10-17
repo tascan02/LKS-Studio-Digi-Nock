@@ -4,6 +4,7 @@ import { validateEnquiry } from '../src/utils/validation.js'
 import {
   collectionEnquiry,
   formatEnquiry,
+  shippingEnquiry,
   whatsappUrl,
 } from '../src/utils/whatsapp.js'
 
@@ -64,4 +65,22 @@ test('WhatsApp URL encodes all enquiry fields and preserves special characters',
 test('category enquiries identify the selected collection', () => {
   for (const name of ["Women's Tops", "Women's T-Shirts", 'Plazo Collection'])
     assert.ok(collectionEnquiry(name).includes(name))
+})
+
+// A country selection must prepare the correct recipient and destination without
+// dropping the city/quantity prompt or accidentally splitting the query string.
+test('international enquiries preserve the chosen country in WhatsApp drafts', () => {
+  for (const country of [
+    'United States',
+    'United Kingdom',
+    'United Arab Emirates',
+    'Australia',
+  ]) {
+    const draft = shippingEnquiry(country)
+    const url = new URL(whatsappUrl(draft))
+    assert.equal(url.pathname, '/918920547605')
+    assert.equal(url.searchParams.get('text'), draft)
+    assert.ok(draft.includes(`delivery to ${country}`))
+    assert.ok(draft.includes('destination city and order requirements'))
+  }
 })

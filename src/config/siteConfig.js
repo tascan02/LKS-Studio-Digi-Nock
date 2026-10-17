@@ -201,5 +201,6 @@ export const navigation = [
   { id: 'collections', label: 'Collections' },
   { id: 'why-choose-us', label: 'Why Choose Us' },
   { id: 'about', label: 'About Us' },
+  { id: 'international-shipping', label: 'Worldwide' },
   { id: 'contact', label: 'Contact Us' },
 ]

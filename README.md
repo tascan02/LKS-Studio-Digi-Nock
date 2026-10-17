@@ -131,6 +131,19 @@ currently upcoming and is intentionally excluded from the form's orderable choic
 If availability changes, update both this data and the explicit dropdown options in
 `src/components/EnquiryForm.jsx` after confirming the launch.
 
+## International shipping section
+
+The Worldwide navigation link scrolls to an interactive international shipping section.
+Featured enquiry destinations are USA, UK, UAE, and Australia, selected by the client.
+Visitors select a country to update the route display and prepare a country-specific
+WhatsApp enquiry. No rates, guaranteed arrival dates, or past delivery counts are claimed.
+Availability, shipping costs, and delivery estimates are confirmed for each order.
+
+Edit country names, ordering, image paths, and focal positions in
+`src/config/shippingData.js`. Photos are lazy-loaded from `public/images/destinations/`;
+a local vector image is used if a photo cannot load. Credits and licensing links are
+recorded in `docs/destination-images.md`.
+
 ## Enquiries and privacy
 
 Category buttons and the floating contact button open the official WhatsApp number:

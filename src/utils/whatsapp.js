@@ -20,3 +20,7 @@ export function formatEnquiry(values) {
     `Message: ${values.message.trim()}`,
   ].join('\n')
 }
+
+export function shippingEnquiry(country) {
+  return `Hello LKS Studio, I am interested in ordering apparel for delivery to ${country}. Please share your wholesale details and help me confirm shipping availability, charges, and estimated delivery timelines. My destination city and order requirements are:`
+}

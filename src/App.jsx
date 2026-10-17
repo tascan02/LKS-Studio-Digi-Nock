@@ -6,6 +6,7 @@ import Collections from './components/Collections'
 import WhyChooseUs from './components/WhyChooseUs'
 import AboutUs from './components/AboutUs'
 import WholesaleCTA from './components/WholesaleCTA'
+import InternationalShipping from './components/InternationalShipping'
 import ContactUs from './components/ContactUs'
 import Footer from './components/Footer'
 import FloatingWhatsApp from './components/FloatingWhatsApp'
@@ -23,6 +24,7 @@ export default function App() {
         <WhyChooseUs />
         <AboutUs />
         <WholesaleCTA />
+        <InternationalShipping />
         <ContactUs />
       </main>
       <Footer />
